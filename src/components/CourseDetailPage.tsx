@@ -1,4 +1,4 @@
-import { BookOpen, Video, Download, Star, Clock, Users } from 'lucide-react';
+import { BookOpen, Video, Download } from 'lucide-react';
 
 interface CourseDetailPageProps {
   course: any; // Replace 'any' with your Course type if available

@@ -1,5 +1,3 @@
-import { Star, Users } from 'lucide-react'; 
-
 interface Course {
   id: string | number;
   code: string;

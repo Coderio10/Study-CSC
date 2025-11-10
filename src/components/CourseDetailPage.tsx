@@ -36,30 +36,6 @@ const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ course, setCurrentP
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{course.title}</h1>
             <p className="text-gray-600 mb-6">{course.description}</p>
-            
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t">
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Duration</div>
-                <div className="font-semibold flex items-center">
-                  <Clock className="w-4 h-4 mr-2 text-blue-600" />
-                  {course.duration}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Students</div>
-                <div className="font-semibold flex items-center">
-                  <Users className="w-4 h-4 mr-2 text-blue-600" />
-                  {course.students}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-500 mb-1">Rating</div>
-                <div className="font-semibold flex items-center">
-                  <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
-                  {course.rating}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

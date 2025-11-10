@@ -37,16 +37,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, onClick }) => (
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-2">{course.title}</h3>
       <p className="text-gray-600 mb-4 text-sm">{course.description.substring(0, 100)}...</p>
-      <div className="flex items-center justify-between text-sm text-gray-500">
-        <div className="flex items-center">
-          <Star className="w-4 h-4 text-yellow-400 fill-current mr-1" />
-          {course.rating}
-        </div>
-        <div className="flex items-center">
-          <Users className="w-4 h-4 mr-1" />
-          {course.students}
-        </div>
-      </div>
     </div>
   </div>
 );

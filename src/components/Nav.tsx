@@ -10,6 +10,17 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentPage, menuOpen, setMenuOpen }) => {
 
+	const handleNavClick = (page: string) => {
+		if (page === 'about' && currentPage === 'home') {
+			const aboutSection = document.getElementById('About');
+			if (aboutSection) {
+				aboutSection.scrollIntoView({ behavior: 'smooth' });
+				return;
+			}
+		}
+		setCurrentPage(page);
+	};
+
 	return (
 		<nav className="bg-white shadow-sm sticky top-0 z-50">
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,11 +31,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentPage, me
 					</div>
 					
 					<div className="hidden md:flex space-x-8">
-					{['home', 'about', 'courses', 'contact'].map(page => (
+					{['home', 'courses', 'contact'].map(page => (
 						<button 
 						type="button"
 						key={page}
-						onClick={() => setCurrentPage(page)} 
+						onClick={() => handleNavClick(page)} 
 						className={`${currentPage === page ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'} px-3 py-2 transition-colors capitalize`}
 						>
 						{page}
@@ -39,11 +50,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setCurrentPage, me
 
 				{menuOpen && (
 					<div className="md:hidden pb-4 space-y-2">
-					{['home', 'courses', 'about', 'contact'].map(page => (
+					{['home', 'courses', 'contact'].map(page => (
 						<button 
 						type="button"
 						key={page}
-						onClick={() => { setCurrentPage(page); setMenuOpen(false); }} 
+						onClick={() => { handleNavClick(page); setMenuOpen(false); }} 
 						className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50 capitalize"
 						>
 						{page}

@@ -18,7 +18,7 @@ const CoursesPage: React.FC<CoursesPageProps> = ({ searchQuery, setSearchQuery, 
 
   return (
     <div className="py-12 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">All Courses</h1>
         
         <div className="mb-8">

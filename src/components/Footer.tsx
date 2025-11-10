@@ -1,17 +1,17 @@
-import { Mail, MessageSquare, BookOpen } from 'lucide-react';
+import { Mail, Github, Twitter, BookOpen } from 'lucide-react';
 
 const Footer = () => {
 
     return (
         <>
             <footer className="bg-gray-900 text-white border-t border-gray-200 py-12">
-                <div className="max-w-6xl mx-auto px-4">
-                    <div className="grid md:grid-cols-3 gap-8">
+                <div className="max-w-6xl mx-auto px-8">
+                    <div className="flex flex-col  md:flex-row gap-8 justify-between">
                         {/* Brand */}
-                            <div>
+                            <div className='w-[320px] border border-red-100'>
                                 <div className="flex items-center space-x-2 mb-4">
-                                    <BookOpen className="w-6 h-6 text-blue-400" />
-                                    <span className="text-xl font-bold text-gray-200">Study CSC FUTA</span>
+                                    <BookOpen className="w-8 h-8 text-blue-600" />
+                                    <span className="text-xl font-bold text-gray-200">Study CSC</span>
                                 </div>
                                 <p className="text-gray-200 text-sm">
                                     Empowering Computer Science students with curated resources and structured learning paths beyond the classroom.
@@ -19,7 +19,7 @@ const Footer = () => {
                             </div>
             
                         {/* Quick Links */}
-                            <div>
+                            <div className='w-[200px] border border-red-100'>
                                 <h3 className="font-semibold text-gray-200 mb-4">Quick Links</h3>
                                 <ul className="space-y-2 text-sm text-gray-200">
                                     <li><a href="#" className="hover:text-blue-400 transition-colors">All Courses</a></li>
@@ -27,16 +27,19 @@ const Footer = () => {
                                     <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
                                 </ul>
                             </div>
-            
+
                         {/* Connect */}
-                        <div>
+                        <div className='w-[200px]  border border-red-100'>
                             <h3 className="font-semibold text-gray-200 mb-4">Connect</h3>
                             <div className="flex space-x-4">
-                                <a href="#" className="bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors">
-                                <Mail className="w-5 h-5 text-gray-600" />
+                                <a href="#">
+                                <Mail className="w-5 h-5 text-gray-400" />
                                 </a>
-                                <a href="#" className="bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors">
-                                <MessageSquare className="w-5 h-5 text-gray-900" />
+                                <a href="#">
+                                <Github className="w-5 h-5 text-gray-400" />
+                                </a>
+                                <a href="#">
+                                <Twitter className="w-5 h-5 text-gray-400" />
                                 </a>
                             </div>
                         </div>

@@ -48,7 +48,7 @@ export const coursesData: coursesDataType[] = [
   },
   {
     id: 2,
-    code: 'CSC 301',
+    code: 'CSC 302',
     title: 'Data Structures & Algorithms',
     description: 'Deep dive into essential data structures and algorithmic problem-solving techniques.',
     difficulty: 'Intermediate',
@@ -101,5 +101,26 @@ export const coursesData: coursesDataType[] = [
     videos: [
       { title: 'ML Overview', duration: '50 min' }
     ]
-  }
+  },
+  {
+    id: 2,
+    code: 'CSC 301',
+    title: 'Design and Analysis of Algorithms',
+    description: 'Deep dive into essential data structures and algorithmic problem-solving techniques.',
+    difficulty: 'Intermediate',
+    duration: '14 weeks',
+    students: 189,
+    rating: 4.9,
+    thumbnail: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop',
+    topics: [
+      { title: 'Arrays and Linked Lists', content: 'Basic data structures and operations', resources: ['arrays_notes.pdf'] },
+      { title: 'Trees and Graphs', content: 'Hierarchical structures and traversal', resources: ['trees_guide.pdf'] },
+      { title: 'Sorting Algorithms', content: 'QuickSort, MergeSort, HeapSort', resources: ['sorting_viz.pdf'] }
+    ],
+    videos: [
+      { title: 'Big O Notation', duration: '30 min' },
+      { title: 'Graph Algorithms', duration: '55 min' }
+    ]
+  },
+
 ];

@@ -1,73 +1,207 @@
-# React + TypeScript + Vite
+# Study CSC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern study management and computer science learning platform built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## 🎯 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Study-CSC is a web application designed to help computer science students organize their learning materials and master fundamental CS concepts. Whether you are learning data structures or building projects, this platform provides the tools you need to succeed. 
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **📚 Study Material Organization**: Organize notes, resources, and learning materials by topic
+- **🎯 Topic Management**: Categorize and manage different CS topics (Data Structures, Algorithms, System Design, etc.)
+- **📱 Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
 
-## Expanding the ESLint configuration
+## Live link
+[Live Link](https://studycscfuta.netlify.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend Framework**: React 18
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: [Your styling solution - Tailwind/CSS Modules/etc]
+- **State Management**: [Your state management - Context/Redux/Zustand/etc]
+- **Routing**: React Router
+- **Code Quality**: ESLint + TypeScript ESLint
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📋 Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Before you begin, ensure you have the following installed:
+- Node.js (v18 or higher)
+- npm or yarn
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/Coderio10/Study-CSC.git
+cd Study-CSC
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+```
 
-```js
+3. **Start the development server**
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. **Open your browser**
+Navigate to `http://localhost:5173`
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint to check code quality
+- `npm run type-check` - Run TypeScript type checking
+
+## 🏗️ Project Structure
+
+```
+Study-CSC/
+├── src/
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Page components
+│   ├── hooks/           # Custom React hooks
+│   ├── utils/           # Utility functions
+│   ├── types/           # TypeScript type definitions
+│   ├── styles/          # Global styles
+│   ├── App.tsx          # Main App component
+│   └── main.tsx         # Application entry point
+├── public/              # Static assets
+├── index.html           # HTML template
+├── package.json         # Project dependencies
+├── tsconfig.json        # TypeScript configuration
+├── vite.config.ts       # Vite configuration
+└── README.md           # You are here
+```
+
+## 🎨 Key Features Breakdown
+
+### Study Management
+Organize your learning materials by categories:
+- Data Structures & Algorithms
+- System Design
+- Operating Systems
+- Computer Networks
+- Databases
+- Web Development
+
+## 🔧 Configuration
+
+### ESLint Setup
+
+This project uses strict TypeScript ESLint rules. To enable type-aware linting:
+
+```javascript
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
 export default defineConfig([
-  globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
+      tseslint.configs.recommendedTypeChecked,
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
-])
+]);
 ```
+
+### Vite Plugins
+
+Currently using `@vitejs/plugin-react` with Babel for Fast Refresh. You can switch to SWC for faster builds:
+
+```typescript
+// vite.config.ts
+import react from '@vitejs/plugin-react-swc'
+
+export default defineConfig({
+  plugins: [react()],
+})
+```
+
+## 🚀 Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The optimized production build will be in the `dist/` folder.
+
+### Deploy to Vercel
+
+```bash
+npm install -g vercel
+vercel
+```
+
+### Deploy to Netlify
+
+```bash
+npm install -g netlify-cli
+netlify deploy --prod
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🐛 Known Issues
+
+- None currently reported
+
+If you find any bugs, please [open an issue](https://github.com/Coderio10/Study-CSC/issues).
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Anointed Kayode**
+
+- GitHub: [@Coderio10](https://github.com/Coderio10)
+- Email: kayodeanointed@gmail.com
+- LinkedIn: [anointedkayode](https://www.linkedin.com/in/anointedkayode)
+
+## 🙏 Acknowledgments
+
+- Vite team for the amazing build tool
+- React community for excellent documentation
+- All contributors who help improve this project
+
+## 📞 Support
+
+If you have any questions or need help, feel free to:
+- Open an issue
+- Email me at kayodeanointed@gmail.com
+- Connect on LinkedIn
+
+---
+
+**⭐ If you find this project helpful, please consider giving it a star!**
+
+---
+
+*Built with ❤️ by Anointed Kayode*
